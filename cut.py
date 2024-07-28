@@ -26,12 +26,12 @@ def main_cut(download_path,array_clips):
 			
 			print("Inserte en que minuto (sin segundos) arrancara el clip:")
 			start_time = int(input()) * 60
-			print("Inserte en que segundos arrancara el clip:)
+			print("Inserte en que segundos arrancara el clip:")
 			start_time += int(input)
 			
 			print("Inserte en que minuto (sin segundos) terminara el clipo")
 			end_time = int(input()) * 60
-			print("Inserte en que segundos terminara el clip:)
+			print("Inserte en que segundos terminara el clip:")
 			end_time += int(input)
 
 			cut(start_time, end_time, name, download_path)
@@ -40,3 +40,4 @@ def main_cut(download_path,array_clips):
 			 
 		else:
 			break
+		

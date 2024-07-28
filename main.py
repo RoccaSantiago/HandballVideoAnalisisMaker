@@ -18,6 +18,6 @@ def main():
 		elif:(option == 3):
 			break
 		else:
-			print(Elegista una opcion invalidad. Vuelve a elegir)
+			print("Elegista una opcion invalidad. Vuelve a elegir")
 
 	

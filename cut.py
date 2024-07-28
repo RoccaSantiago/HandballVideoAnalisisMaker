@@ -1,3 +1,4 @@
+from moviepy.video.io.ffmpeg_tools import ffmpeg_extract_subclip
 
 def print_cut(counter):
 	print("Insete la opcion:")
@@ -8,7 +9,7 @@ def print_cut(counter):
 	print("2 - volver")
 
 def cut(start_time, end_time,name, download_path):
-	output = ".\clips\" + name + ".mp4"
+	output = ".\clips\ " & name & ".mp4"
 	ffmpeg_extract_subclip(download_path, start_time, end_time, targetname = output)
 
 def main_cut(download_path,array_clips):

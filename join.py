@@ -22,9 +22,9 @@ def main_join(array_clips):
 		option = input()
 		
 		if (option == 1 ):
-			print(Indique el indice del primer clip:)
+			print("Indique el indice del primer clip:")
 			clipA = int(input()) - 1 
-			print(Indique el indice del segundo clip:)
+			print("Indique el indice del segundo clip:")
 			clipB = int(input()) - 1
 			
 			array_clips = change_order(clipA, clipB, array_clips)

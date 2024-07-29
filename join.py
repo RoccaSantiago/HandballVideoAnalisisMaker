@@ -4,6 +4,7 @@ def change_order(cllpA, clipB, array_clips):
 
 def join_clips(array_clips):
 	# joinear los videos y devolverlo en una carpeta resultados
+	return
 
 def main_join(array_clips):
 	
@@ -29,4 +30,5 @@ def main_join(array_clips):
 			
 			array_clips = change_order(clipA, clipB, array_clips)
 		else:
-			join_clips(array_clips) 
+			join_clips(array_clips)
+ 

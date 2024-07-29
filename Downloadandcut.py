@@ -1,8 +1,8 @@
 from pytube import YouTube
-foom moviepy.video.io.ffmpeg_tools import ffmpeg_extract_subclip
+from moviepy.video.io.ffmpeg_tools import ffmpeg_extract_subclip
+from cut import main_cut
 
-
-def print_d&c():
+def print_dandc():
 	print("Insete la opcion:")
 	print("1 - Descargar video y cortar")
 	print("2 - volver")
@@ -15,7 +15,8 @@ def download(link):
 	download_path = strean.download()
 	
 
-def main_d&c():
+def main_dandc():
+	
 	while(true):
 		option = input()
 		

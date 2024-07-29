@@ -1,4 +1,5 @@
 from moviepy.video.io.ffmpeg_tools import ffmpeg_extract_subclip
+import os
 
 def print_cut(counter):
 	print("Insete la opcion:")

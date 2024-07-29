@@ -10,7 +10,7 @@ def change_order(cllpA, clipB, array_clips):
 		swap(array_clips[clipA],array_clips[clipB])
 		return array_clips
 
-def join_clips(array_clips):
+def join_clips(array_clips, direction):
 	print("Como desea llamar el video final?")
 	name = input()
 	clips = [VideoFileClip(video + ".mp4") for video in array_clips]

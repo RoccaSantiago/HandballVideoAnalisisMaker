@@ -9,11 +9,11 @@ def print_cut(counter):
 		print("1 - Cortar clip")
 	print("2 - volver")
 
-def cut(start_time, end_time,name, download_path):
-	output = ".\clips\ " & name & ".mp4"
+def cut(start_time, end_time,name, download_path, direction):
+	output = direction + "/Clips/" + name + ".mp4"
 	ffmpeg_extract_subclip(download_path, start_time, end_time, targetname = output)
 
-def main_cut(download_path,array_clips):
+def main_cut(download_path,array_clips, direction):
 	counter = 0
 	while(true):
 		print_cut(counter)
@@ -22,7 +22,14 @@ def main_cut(download_path,array_clips):
 		if (option == 1):
 			print("Clip " + i)
 			print("Inserte el nombre del clip")
-			name = input()
+			
+			while(true):
+				name = input()
+				if name in array_clips:
+					print("Ese nombre ya existe. Inserte otro")
+				else:
+					break
+			
 			array_clips.append(name)
 			
 			print("Inserte en que minuto (sin segundos) arrancara el clip:")
@@ -35,10 +42,13 @@ def main_cut(download_path,array_clips):
 			print("Inserte en que segundos terminara el clip:")
 			end_time += int(input)
 
-			cut(start_time, end_time, name, download_path)
+			cut(start_time, end_time, name, download_path, direction)
 			
 			counter+=1
 			 
-		else:
+		elif (option == 2):
 			break
+		
+		else:
+			print("Elegista una opcion invalida. Vuelve a elegir")
 		

@@ -24,7 +24,7 @@ def main():
 		option = input()
 
 		if(option == 1):
-			array_clips = main_download&cut(array_clips)
+			array_clips = main_dandc(array_clips, direction)
 		
 		elif(option == 2):
 
@@ -36,7 +36,7 @@ def main():
 			print("2 - No")
 			
 			if(optionB == 1):
-				main_join(array_clips)
+				main_join(array_clips, direction)
 				break
 		
 		elif(option == 3):

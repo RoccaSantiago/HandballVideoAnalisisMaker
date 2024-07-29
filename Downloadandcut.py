@@ -12,20 +12,24 @@ def print_dandc():
 def download(link):
 	yt = YouTube(link)
 	stream = yt.streams.filter(progressive = true, file_extension = "mp4").first()
-	download_path = strean.download()
+	return strean.download()
 	
 
-def main_dandc():
+def main_dandc(array_clips, direction):
 	
 	while(true):
 		option = input()
 		
-		if (opcion == 1):
+		if (option == 1):
 			print("Ingrese link a descargar:")
 			link = input()
-			download(link)
-			main_cut()
-		else:
+			main_cut(download(link), array_clips, direction)
+
+		elif (option == 2 ):
 			break
+		
+		else:
+			print("Elegista una opcion invalida. Vuelve a elegir")
+
 
 

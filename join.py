@@ -6,7 +6,7 @@ def swap(a,b):
 	a = b
 	b = temp
 
-def change_order(cllpA, clipB, array_clips):
+def change_order(clipA, clipB, array_clips):
 		swap(array_clips[clipA],array_clips[clipB])
 		return array_clips
 
@@ -17,23 +17,23 @@ def join_clips(array_clips, direction):
 	final_video = concatenate_videoclips(clips)
 	final_video.write_videofile(direction + "Video final/" + name + ".mp4")
 
-def main_join(array_clips):
+def main_join(array_clips,direction):
 	
-	while(true):
-
+	while(True):
+		print("\n==========================================")
 		print("El video se unira en el siguiente orden:")
 	
 		for i in range(0,len(array_clips)):
 			print(f"{i} - {array_clips[i]}")
 		
-	
+		print()
 		print("1 - Desea cambiar el orden entre 2 clips?")
 		print("2 - Desea cambiar el orden de todos los clips")
 		print("3 - No cambiar el orden y unir clips")
 			
 		option = input()
 		
-		if (option == 1 ):
+		if (option == '1' ):
 			print("Indique el indice del primer clip:")
 			clipA = int(input()) - 1 
 			print("Indique el indice del segundo clip:")
@@ -41,10 +41,10 @@ def main_join(array_clips):
 			
 			array_clips = change_order(clipA, clipB, array_clips)
 		
-		if (option == 2):
+		if (option == '2'):
 			print("Inserte una secuencia de indices separados por un espacio y sin repetidos (eg 2 3 4 1 6 5 7)")
 
-			while(true):
+			while(True):
 				secuencia = input().split(" ")
 
 				if max(secuencia > len(array_clips)) or len(secuencia) != len(array_clips) or len(secuencia) != len(set(array_clips)):
@@ -56,8 +56,8 @@ def main_join(array_clips):
 			for i in range(0,len(secuencia)):
 				array_clips[i] = array_clips[secuencia[i]]
 
-		if (option == 3):
-			join_clips(array_clips)
+		if (option == '3'):
+			join_clips(array_clips,direction)
 			break
 		
  

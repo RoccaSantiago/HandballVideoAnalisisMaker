@@ -4,11 +4,15 @@ import os
 
 direction = os.path.dirname(os.path.abspath(__file__))
 
+def clear_console():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    
 def print_options_main():
-	print("Elija la opcion:")
-	print("1 - Descargar video y cortar")
-	print("2 - Unificar videos")
-	print("3 - Terminar")	
+    clear_console()
+    print("Elija la opcion:")
+    print("1 - Descargar video y cortar")
+    print("2 - Unificar videos")
+    print("3 - Terminar\n")	
 
 def create_and_clean_folder(folder_name):
     folder_path = os.path.join(direction, folder_name)
@@ -22,36 +26,31 @@ def create_and_clean_folder(folder_name):
                 os.remove(file_path)
 
 def main():
-	array_clips = []
+    direction = os.path.dirname(os.path.abspath(__file__))
+    
+    array_clips =  []
+    
+    create_and_clean_folder("Clips")
+    create_and_clean_folder("Videos Enteros")
+    create_and_clean_folder("Video Final")
 
-	create_and_clean_folder("Clips")
-	create_and_clean_folder("Video Final")
-	create_and_clean_folder("Videos Enteros")
-					
-	while(True):
-		print_options_main()
-		option =input()
+    while True:
+        print_options_main()
+        option = input()
 
-		if(option == '1'):
-			array_clips = main_dandc(array_clips, direction)
-		
-		elif(option == '2'):
+        if option == '1':
+            array_clips = main_dandc(array_clips, direction)
+        elif option == '2':
+            clear_console()
+            confirm = input("¿Estás seguro? No podrás volver atrás\n1 - Sí\n2 - No\n")
+            if confirm == '1':
+                main_join(array_clips, direction)
+                break
+        elif option == '3':
+            break
+        else:
+            print("Elegiste una opción inválida. Vuelve a elegir")
 
-			print("¿Estas seguro? No podras volver atras")
-			print("1 - Si")
-			print("2 - No")
 
-			optionB = input()
-			
-	
-			if(optionB == '1'):
-				main_join(array_clips, direction)
-				break
-		
-		elif(option == '3'):
-			break
-		
-		else:
-			print("Elegista una opcion invalida. Vuelve a elegir")
-
-main()	
+if __name__ == "__main__":
+    main()	
